@@ -7,9 +7,9 @@ import {
 import Layout from "./layouts/Layout";
 import Register from "./pages/Register";
 import SignIn from "./pages/SignIn";
-// import AddHotel from "./pages/AddHotel";
-// import { useAppContext } from "./contexts/AppContext";
-// import MyHotels from "./pages/MyHotels";
+import AddHotel from "./pages/MyHotels";
+import { useAppContext } from "./contexts/AppContext";
+import MyHotels from "./pages/MyHotels";
 // import EditHotel from "./pages/EditHotel";
 // import Search from "./pages/Search";
 // import Detail from "./pages/Detail";
@@ -18,7 +18,7 @@ import SignIn from "./pages/SignIn";
 // import Home from "./pages/Home";
 
 const App = () => {
-  // const { isLoggedIn } = useAppContext();
+  const { isLoggedIn } = useAppContext();
   return (
     <Router>
       <Routes>
@@ -66,18 +66,19 @@ const App = () => {
           }
         />
 
-        {/* {isLoggedIn && (
+        {isLoggedIn && (
           <>
             <Route
               path="/hotel/:hotelId/booking"
               element={
                 <Layout>
-                  <Booking />
+                  {/* <Booking /> */}
+                  <p>Booking</p>
                 </Layout>
               }
             />
 
-            <Route
+             <Route
               path="/add-hotel"
               element={
                 <Layout>
@@ -89,7 +90,8 @@ const App = () => {
               path="/edit-hotel/:hotelId"
               element={
                 <Layout>
-                  <EditHotel />
+                  {/* <EditHotel /> */}
+                  <p>Edit Hotel</p>
                 </Layout>
               }
             />
@@ -105,12 +107,13 @@ const App = () => {
               path="/my-bookings"
               element={
                 <Layout>
-                  <MyBookings />
+                  {/* <MyBookings /> */}
+                  <p>My Bookings</p>
                 </Layout>
               }
-            />
+            /> 
           </>
-        )} */}
+        )}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
